@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Epgp : EPGP">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Epgp</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/sbWoW/epgp">View on GitHub</a>
+
+          <h1 id="project_title">Epgp</h1>
+          <h2 id="project_tagline">EPGP</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/sbWoW/epgp/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/sbWoW/epgp/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>Das System nennt sich "EPGP" und teilt sich in 2 Bereiche auf: EP und GP.</p>
+
+<p>Fuer Raids/Erfolge/Versuche/whatever bekommt man EP (Effort Points) gutgeschrieben.</p>
+
+<p>Und fuer Items die man sich holt bekommt man GP (Gear Points) angerechnet. Die Punkte sind fuer jedes Item festgelegt abhaengig vom Seltenheitsgrad und Itemlevel. (Bsp: Priester T3 Robe: 195GP, T3.5 Robe 200GP, T4 Robe 254GP)</p>
+
+<p>Zunaechsteinmal werden die Punkte einfach aufaddiert, ABER:</p>
+
+<p>Vor jedem Raid werden 10% der EP und 10% der GP abgezogen! Unabhaengig davon ob man am Raid teilnimmt oder nicht.</p>
+
+<p>Wichtig fuer die Itemvergabe ist jetzt lediglich die Prioritaet, die sich wie folgt berechnet:</p>
+
+<p><code>PR = EP / GP</code></p>
+
+<p>Kurze Beispiele:
+Spieler 1:
+300 EP
+100 GP
+=&gt; PR 3</p>
+
+<p>Spieler 2:
+500EP
+250GP
+=&gt; PR 2</p>
+
+<p>D.h. Spieler 1 hat eine hoehere Item-Prioritaet (Spieler 2 hat zwar mehr EP allerdings fuer sein(e) Items auch mehr bezahlt)</p>
+
+<p>Wenn jetzt ein Item droppt auf das die beiden Spieler Bedarf haben dann bekommt Spieler 1 das Item und entsprechend die GP dazuaddiert (was ziemlich sicher dazu fuehrt dass Spieler 2 dann die hoehere Prioritaet hat - natuerlich abhaengig vom Itemlevel).</p>
+
+<p>Dadurch dass vor jedem Raid 10% von EP und GP 'verfallen' aendert sich die Prioritaet nicht, d.h. wenn jemand nicht dabei ist verliert er dadurch nicht gleich anrecht auf ein Item, allerdings wirken sich dann natuerlich GP die er spaeter bekommt staerker auf seine Proritaet aus (weil er ja insgesamt weniger hat), d.h. sie sinkt staerker als wenn er dabei gewesen waere.</p>
+
+<p>Zusaetzlich gibt es dann noch einen Minimum-EP Wert, z.B. 2500</p>
+
+<p>D.h. wenn 2 Spieler Bedarf auf ein Item haben aber einer der Spieler  mit seinem EP unter dem Minimum liegt (EP abgezogen werden ausschliesslich durch den 10% Punkteverfall pro Raid - NICHT durch "Itemkaeufe" wie bei DKP) bekommt es der Spieler der 'ausreichend' EP hat.</p>
+
+<p>Verwirrend ist das ganze am Anfang:
+Keiner hat GP, Keiner hat Minimum-EP, "Alle" haben gleiche EP d.h.:</p>
+
+<p>Prioritaet = EP (theoretisch muesste durch  0 (also GP) geteilt werden, aber da das nicht geht wird durch 1 geteilt, d.h. = EP).</p>
+
+<p>D.h. anfangs duerfen alle mit dem gleich-hohen EP Wert auf ein Item wuerfeln (da gleiche Prioritaet).</p>
+
+<p>Sobald einer ein Item hat (also dann PR &lt; 10 statt &gt;100) ist er mit seiner Prioritaet natuerlich weit unter denjenigen die noch kein Item haben.</p>
+
+<p>Die einzige Ausnahme zur Prioritaet ist jetzt eben wenn ein Spieler ueber den Minimum EP ist und ein anderer, der auch Bedarf auf ein bestimmtes Item hat darunter, dann erhaelt der Spieler (unabhaengig von der Prioritaet) das Item vor demjenigen ohne erreichte Minimum-EP.</p>
+
+<p>Dadurch benoetigt man mindestens 2 fast volle IDs (5 Raids ca. inkl. Beruecksichtigung des Verfalls) bis man in die Prio-Regelung rutscht, d.h. jemand der nur 1-2 Mal dabei ist, wird nicht ploetzlich vor allen anderen stehen.</p>
+
+<p>Dieses System bevorzugt nun keine Spieler mehr die 'ewig' dabei sind und sich Punkte angesammelt haben (bzw das vorhaben) - da die Punkte ja pro Raid auch wieder verfallen, d.h. weniger wert werden - dadurch wird eine Punkteinflation wie in anderen Systemen verhindert.</p>
+
+<p>Es ist einzig und allein wichtig wie haeufig man teilnimmt - wie exzessiv man sich alle Items krallt (bzw es will) die droppen und ob man seine Minimum GP erreicht (was auch die einzige 'Huerde' fuer neue Spieler darstellt - sobald diese erreicht ist ist ein 'neuer' mit guter Beteiligung auch sehr schnell auf dem Niveau von jemand der schon laenger dabei ist und eine 'gleichgute' Beteiligung hat wie der neue.</p>
+
+<p>Auch gibt es z.b. keine unfaire Vergabe von Itempunkten wie z.b. bei ZeroPoint DPK System - da die Items IMMER gleichviel wert sind, egal was noch gedroppt ist, wieviele dabei waren etc.</p>
+
+<p>Gezieltes 'sparen' auf Items wird in diesem System auch eher bestraft als belohnt: Je laenger man seinen PR Vorsprung zurueckhaelt und sich nichts holt umso weniger hat man davon und desto schneller man sich ein Item holt desto schneller sind auch die GP davon wieder verfallen.</p>
+
+<p>Warum? Weil es den Raid nicht weiterbringt wenn alle nur sparen, sich ein gutes Item (z.b. Hose) nicht holen weil sie auf einen anderen Drop (z.b. Waffe) warten - dadurch wird der Raid schneller besser equippied, Items schnell an Leute mit hoher Beteiligung (nein, das ist nicht 'unfair' - das bringt den Raid weiter...)</p>
+
+<p>Zusaetzlich zu den normalen GP gibt es auch Base-GP.</p>
+
+<p>D.h. auf die eigenen GP bekommt JEDER (!) noch die Base-GP dazu-addiert, sprich wenn man bisher
+nur ein Item fuer 300 GP gekauft hat, dann hat man 400 GP. Genauso wenn man noch NICHTS gekauft hat, dann hat man trotzdem 100 GP.</p>
+
+<p>Decay wird der % wer von den Effektiven GP (Base GP + Real GP) genommen und dann von der Real GP abgezogen.
+D.h.:</p>
+
+<p>(Real GP) 500 GP + (Base GP) 100 GP = (Effective GP) 600 GP
+10 % Decay = 60 GP
+Neuer Stand: (Real GP) 500 GP - (Decay) 60 GP = (Real GP) 440 GP + (Base GP) 100 GP =  (Effective GP) 540!</p>
+
+<p>Dadurch ist die MAXIMALE Prioritaet nicht wie bisher einfach PR = MAX_EP / 0 (Bzw. geteilt durch 1 weil durch 0 nie geteilt wird, explodierendes Universum usw..)</p>
+
+<p>sondern: PR = MAX_EP / BASE_GP</p>
+
+<p>Der Abstand den man durch uebermaessiges Sparen bekommen koennte wird dadurch verkleinert (z.B. gab es in der Vergangenheit einige Anwaerter die frisch befoerdert wurden oder auch einfach Spieler die NICHTS ausgegeben hatten mit 1-10 GP, wodurch sie PR-maessig einfach einen riesigen Abstand zu allen anderen bekommen haben - das wird dadurch verhindert.</p>
+
+<p>In einem Satz:
+(==&gt; Base GP prevents new recruits or long time inactive members from trumping your dedicated members just because their GP is 0 and thus their PR infinite)</p>
+
+<pre><code>Die wichtigsten Daten nochmal (Beispiel):
+
+Minimale EP: 2500
+Verfall pro Raid (EP + GP): 10%
+Durchschnittliche EP pro Raid: 500
+Base-GP: 100
+</code></pre>
+
+<p>Bei Second-Spec Items kann man sich jetzt ueberlegen ob man sie zu einem sehr kleinen Preis (10 GP, 25%, oder Aehnliches) oder konmplett kostenlos rausgibt - allerdings sollte man dann ein Auge drauf haben ob irgendwer staendig "second" anmeldet und die Items dann im Main-Gear unterbringt.</p>
+
+<p>Strafen sind sowohl durch EP-Subtraktion als auch durch GP-Addition moeglich - wobei letzteres wahrscheinlich deutlich haerter trifft, da es wie ein Item zaehlt und nicht nur wie eine Nicht-Teilnahme.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Epgp maintained by <a href="https://github.com/sbWoW">sbWoW</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
